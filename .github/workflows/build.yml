@@ -1,10 +1,10 @@
-name: Build VirtualXposed APK
+name: Build Android APK
 
 on:
   push:
-    branches: [ "vxp", "main", "master" ]
+    branches: [ "main", "master", "vxp" ]
   pull_request:
-    branches: [ "vxp", "main", "master" ]
+    branches: [ "main", "master", "vxp" ]
   workflow_dispatch:
 
 jobs:
@@ -38,5 +38,5 @@ jobs:
     - name: Upload Generated APK
       uses: actions/upload-artifact@v4
       with:
-        name: VirtualXposed-APK
+        name: app-debug
         path: "**/build/outputs/apk/**/*.apk"
